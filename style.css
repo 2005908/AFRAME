@@ -29,7 +29,6 @@ padding-left:15vw;
 padding-right: 15vw;
 display: flex;
 flex-flow: row nowrap;
-font-family: Sullivan;
 }
 
 .header {
@@ -62,6 +61,7 @@ color: #f9faf8;
 font-size: 48px;
 font-weight: bolder;
 margin:0;
+font-family: Sullivan;
 }
 
 #hero_description, .header_link {
