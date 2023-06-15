@@ -15,9 +15,9 @@
     <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono;'
         vr-mode-ui="enabled: false">
         <a-assets>
-        </a-assets>
         <a-asset-item id="magnet" src="gltfs/magneticFieldLinesMagnetForGltf.gltf"></a-asset-item>
         <a-asset-item id="ring" src="gltfs/copperRing.gltf.gltf"></a-asset-item>
+        </a-assets>
 
         <a-arcube>
             <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
@@ -50,15 +50,9 @@
             dur: 1000; loop: true; easing: linear; 
             autoplay: true;">
             </a-sphere>
-
-
-            <a-cylinder position="0 .5 0" radius="0.05"  height="1" color="grey" opacity=".5"></a-cylinder>                                                           
-            <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#magnet" animation="property: rotation; from: '0 0 0'; to: 
-                '0 360 0'; dur: 10000; loop: true; easing: linear; autoplay: 
-                false;" color="yellow"></a-entity>
-            <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#ring" animation="property: rotation; from: '0 0 0'; to: 
-                '0 360 0'; dur: 10000; loop: true; easing: linear; autoplay: 
-                false;" color="yellow"></a-entity>
+                                                          
+            <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#magnet" color="yellow"></a-entity>
+            <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#ring" color="yellow"></a-entity>
         </a-arcube>
         <a-entity camera></a-entity>
     </a-scene>
