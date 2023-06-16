@@ -20,36 +20,25 @@
         </a-assets>
 
         <a-arcube>
-            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
-                event-set__down="_event: mousedown; scale: 1.2 1.2 1.2" animation="property: position; from: '0 0 0'; to: '0 1 0'; delay: 0;
-            dur: 1000; loop: true; easing: linear; 
-            autoplay: true;" event-set__up="_event: mouseup; scale: 1 1 1"
-                event-set__leave="_event: mouseleave; scale: 1 1 1">
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue">
             </a-sphere>
+            </a-entity>
 
-            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
-                event-set__down="_event: mousedown; scale: "1.2 1.2 1.2" animation="property: position; from: '0 0 0'; to: '0 1 0'; delay: 200; 
-            dur: 1000; loop: true; easing: linear; 
-            autoplay: true;">
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue">
             </a-sphere>
-
-            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
-                event-set__down="_event: mousedown; scale: 1.2 1.2 1.2" animation="property: position; from: '0 0 0'; to: '0 1 0'; delay: 400; 
-            dur: 1000; loop: true; easing: linear; 
-            autoplay: true;">
+            </a-entity>
+            
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue">
             </a-sphere>
-
-            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
-                event-set__down="_event: mousedown; scale: 1.2 1.2 1.2" animation="property: position; from: '0 0 0'; to: '0 1 0'; delay: 600; 
-            dur: 1000; loop: true; easing: linear; 
-            autoplay: true;">
+            </a-entity>
+            
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue">
             </a-sphere>
-
-            <a-sphere id="blueBall" position="0 0 0" radius=".03" color="blue" 
-                event-set__down="_event: mousedown; scale: 1.2 1.2 1.2" animation="property: position; from: '0 0 0'; to: '0 1 0'; delay: 800; 
-            dur: 1000; loop: true; easing: linear; 
-            autoplay: true;">
-            </a-sphere>
+            </a-entity>
                                                           
             <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#magnetfield"></a-entity>
             <a-entity position="0 .05 0" scale="0.07 0.07 0.07" gltf-model="#ringcurrent"></a-entity>
