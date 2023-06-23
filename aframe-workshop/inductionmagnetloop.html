@@ -9,6 +9,17 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
     </script>
+    
+    AFRAME.registerComponent("animation-manager", {
+        init: function() {
+          // wait for the first animation to finish
+          this.el.addEventListener("animationcomplete__first", e => {
+            // start the second animation
+            this.el.emit("second")
+          })
+        }
+      })
+    </script>
 </head>
 
 <body>
@@ -26,12 +37,9 @@
             
                 </a-entity>
             
-            <a-entity position="0 .3 -0.5"
-                scale="0.07 0.07 0.07"
-                gltf-model="#ringcurrent"
-                animation="property: position; to: 0 0.15 -0.5; easing:linear;autoplay: true" 
-                animation__2="property: rotation; to: 0 0 360; dur: 2000; autoplay: true"
-                animation__3="property: rotation; to: 0 0 -360; dur: 2000; autoplay: true"
+            <a-entity position="0 .3 -0.5" animation-manager color="#4CC3D9" scale="0.07 0.07 0.07" gltf-model="#ringcurrent"
+          animation__first="property: position; to: 0 0.15 -0.5; easing:linear; startEvents: click" 
+          animation__second="property: rotation; to: 0 0 360; dur: 2000; dir: alternate; easing: linear; loop: 2; startEvents: second">
                 >
                 </a-entity>
         </a-arcube>
