@@ -11,19 +11,28 @@
     </script>
     <script>
     AFRAME.registerComponent("animation-manager", {
-        init: function() {
-          // wait for the first animation to finish
-          this.el.addEventListener("animationcomplete__first", e => {
-            // start the second animation
-            this.el.emit("second")
-          });
-            this.el.addEventListener("animationcomplete__second", e => {
-            // start the second animation
-            this.el.emit("first")
-            });
-        }
+    init: function() {
+      // wait for the first animation to finish
+      this.el.addEventListener("animationcomplete__first", e => {
+        // start the second animation
+        this.el.emit("second")
+      });
+      this.el.addEventListener("animationcomplete__second", e => {
+        // start the second animation
+        this.el.emit("third")
+      });
+      this.el.addEventListener("animationcomplete__third", e => {
+        // start the second animation
+        this.el.emit("fourth")
+      });
+      this.el.addEventListener("animationcomplete__fourth", e => {
+        // start the second animation
+        this.el.emit("first")
+      });
+    }
   })
     </script>
+    
 </head>
 
 <body>
@@ -42,10 +51,10 @@
                 </a-entity>
             
             <a-entity position="0 .3 -0.5" animation-manager color="#4CC3D9" scale="0.07 0.07 0.07" gltf-model="#ringcurrent"
-          animation__first="property: position; to: 0 0.15 -0.5; easing:linear;dur: 5000;startEvents: first" 
-          animation__second="property: rotation; to: 0 0 -360; dur: 5000; easing: linear;delay:1000;startEvents: first"
-          animation__third="property: position; to: 0 0.3 -0.5; easing:linear;startEvents: second;dur: 5000;delay:1000" 
-          animation__fourth="property: rotation; to: 0 0 360; dur: 5000;easing: linear; startEvents: second">
+          animation__first="property: position; to: 0 0.15 -0.5; easing:linear;dur: 5000;startEvents: loaded, animationcomplete__fourth" 
+          animation__second="property: rotation; to: 0 0 360; dur: 5000; easing: linear;startEvents: animationcomplete__first"
+          animation__fourth="property: rotation; to: 0 0 -360; dur: 5000;easing: linear; startEvents: animationcomplete__second"
+          animation__third="property: position; to: 0 0.3 -0.5; easing:linear;startEvents: animationcomplete__third;dur: 5000" 
                 >
                 </a-entity>
         </a-arcube>
